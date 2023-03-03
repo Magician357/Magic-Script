@@ -4,5 +4,7 @@ This program will be mainly good for heavy math or graphing.
 
 SYNTAX:
 
-Variables: var TYPE = VALUE;
+Variables: let TYPE :  = VALUE;
 value can be null
+
+Log to console: print : VALUE;

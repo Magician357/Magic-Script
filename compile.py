@@ -1,3 +1,5 @@
+# python3 Magic-Script/compile.py Magic-Script/text.masc
+
 import sys
 
 class argumentError(Exception):
@@ -5,10 +7,19 @@ class argumentError(Exception):
         super().__init__(message)
         self.message = message
 
-def compile(text):
-    full=text.split("\n")
-    for line in full:
-        pass
+def parse_var(text):
+    text=text.replace("\n","")
+    variables = {}
+    line_number = 0
+    for line in text.split(";"):
+        if line.startswith("let "):
+            temp = line[4:].replace(" ", "").split(":")
+            variables[temp[1].split("=")[0]] = (temp[0], temp[1].split("=")[1], line_number)
+        line_number += 1
+    return variables
+
+def parse_funcs(text):
+    pass
 
 if __name__ == "__main__":
     arguments=sys.argv
@@ -18,3 +29,6 @@ if __name__ == "__main__":
         text=f.read()
     print("File retrieved")
     print("Beginning compiling...")
+    variables=parse_var(text)
+    print("Done")
+    print(variables)
