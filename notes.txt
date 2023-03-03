@@ -1,0 +1,8 @@
+Will use python to compile to c++
+You will be able to use functions from other c++ files
+This program will be mainly good for heavy math or graphing.
+
+SYNTAX:
+
+Variables: var TYPE = VALUE;
+value can be null
